@@ -25,7 +25,7 @@
 
 	<div class="p-6">
 
-	  {{ $t := .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}
+	  {{ $t := .Date.Format "2006-01-02T15:04:05-07:00" }}
 
 		<time datetime="{{ $t | safeHTML }}">{{ $t | time.Format ":date_long" }}</time>
 
