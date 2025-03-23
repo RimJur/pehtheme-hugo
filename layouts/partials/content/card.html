@@ -25,7 +25,9 @@
 
 	<div class="p-6">
 
-		<time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ .Date.Format ":date_long" }}</time>
+	  {{ $t := .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}
+
+		<time datetime="{{ $t | safeHTML }}">{{ $t | time.Format ":date_long" }}</time>
 
 		<h3 class="my-4 text-2xl font-bold">{{ .LinkTitle }}</h3>
 
