@@ -1,9 +1,35 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <!-- Dynamic title for SEO -->
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="msapplication-config" content="/browserconfig.xml"/>
+<meta name="theme-color" content="#e2e4ff"/>
 <!-- Dynamic description for SEO -->
 <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.description }}{{ end }}">
+<link href="/static/css/output-min.css" rel="stylesheet"/>
+<!--Dark mode-->
+<script>
+	// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+	document.documentElement.classList.toggle(
+  	'dark',
+  	localStorage.theme === 'dark'
+	)
+</script>
+<!--HTMX Core-->
+<script defer src="https://unpkg.com/htmx.org@1.9.12"></script>
+<!-- Alpine Plugins -->
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.14.1/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.14.1/dist/cdn.min.js"></script>
+<script defer src="/static/js/index.js"></script>
+<!--Alpine Core-->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 {{- partialCached "head/css.html" . -}}
 {{- partialCached "head/favicon.html" . -}}
 {{- /* template "_internal/google_analytics.html" . */ -}}

@@ -1,4 +1,4 @@
-<div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
+<!-- <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
 	<div class="flex items-center">
 		<div class="flex items-center">
 			<button class="flex hover:cursor-pointer items-center space-x-2 rounded-full py-1 pr-[5px] pl-3 toggle-button" data-target="menu-bar">
@@ -14,4 +14,105 @@
 	</div>
 	{{- partial "menu.html" (dict "menuID" "main" "page" .) -}}
 	<!-- {{- partial "search.html" . -}} -->
-</div>
+<!-- </div> -->
+
+<header class="shrink-0">
+		<nav
+			x-data="{isHamburgerMenuOpen: false}"
+			x-init="isHamburgerMenuOpen=window.innerWidth > 767"
+			class="fixed w-full z-30 top-0 start-0 bg-surface dark:bg-surface-dark border-b border-outline dark:border-outline-dark"
+		>
+			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+				<a
+					href="/marsrutai"
+					class="hidden md:flex items-center space-x-3"
+				>
+					<img
+						src="/assets/logo_long.svg"
+						class="h-8"
+						alt="Upemis.lt Logo"
+					/>
+				</a>
+				<a
+					href="/marsrutai"
+					class="flex md:hidden items-center space-x-3"
+				>
+					<img
+						src="/assets/logo_small.png"
+						class="h-8"
+						alt="Upemis.lt Logo"
+					/>
+				</a>
+				<div
+					class="flex md:order-2 space-x-5 items-center"
+				>
+					<!-- Light/Dark mode switch -->
+					<button
+						@click="theme = theme === 'dark' ? 'light' : 'dark'"
+						type="button"
+						class="hover:cursor-pointer h-8 w-8 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-hidden rounded-lg text-sm p-1"
+					>
+						<svg
+							x-show="theme !== 'dark'"
+							x-cloak
+							class="w-5 h-5 fill-neutral-800 mx-auto"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+						</svg>
+						<svg
+							x-show="theme === 'dark'"
+							x-cloak
+							class="w-5 h-5 dark:fill-neutral-200 mx-auto"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+						</svg>
+					</button>
+					<!--Hamburger menu-->
+					<button
+						x-on:click="isHamburgerMenuOpen = !isHamburgerMenuOpen"
+						type="button"
+						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						aria-controls="navbar-sticky"
+						aria-expanded="false"
+					>
+						<span class="sr-only">Open main menu</span>
+						<svg
+							class="w-5 h-5"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 17 14"
+						>
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"></path>
+						</svg>
+					</button>
+					<!--Hamburger menu-->
+				</div>
+				<div
+					x-show="isHamburgerMenuOpen"
+					x-transition
+					x-cloak
+					class="items-center justify-between w-full md:flex md:w-auto md:order-1"
+				>
+					<ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+						<li>
+							<a
+								href="/marsrutai"
+								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+							>Maršrutai</a>
+						</li>
+						<li>
+							<a
+								href="/upes"
+								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+							>Upės</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
