@@ -1,5 +1,4 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
 title = 'My New Hugo Site'
 
 [[menus.main]]
@@ -18,6 +17,6 @@ pageRef = '/tags'
 weight = 30
 
 [module]
-  [module.hugoVersion]
-    extended = false
-    min = "0.116.0"
+[module.hugoVersion]
+extended = false
+min = "0.111.0"
