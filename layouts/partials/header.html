@@ -1,26 +1,8 @@
-<!-- <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col">
-	<div class="flex items-center">
-		<div class="flex items-center">
-			<button class="flex hover:cursor-pointer items-center space-x-2 rounded-full py-1 pr-[5px] pl-3 toggle-button" data-target="menu-bar">
-				<svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-					<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
-				</svg>
-			</button>
-			<div class="relative rounded-full py-1.5 px-6 bg-zinc-100 hover:bg-zinc-200 text-xl font-bold uppercase mx-2">
-				{{ if .IsHome}}<h1><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-			{{ else }}<h2><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>{{ end }}
-			</div>
-		</div>
-	</div>
-	{{- partial "menu.html" (dict "menuID" "main" "page" .) -}}
-	<!-- {{- partial "search.html" . -}} -->
-<!-- </div> -->
-
 <header class="shrink-0">
 		<nav
 			x-data="{isHamburgerMenuOpen: false}"
 			x-init="isHamburgerMenuOpen=window.innerWidth > 767"
-			class="fixed w-full z-30 top-0 start-0 bg-surface dark:bg-surface-dark border-b border-outline dark:border-outline-dark"
+			class="fixed w-full z-30 top-0 start-0 bg-surface border-b border-outline"
 		>
 			<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 				<a
@@ -50,7 +32,7 @@
 					<button
 						x-on:click="isHamburgerMenuOpen = !isHamburgerMenuOpen"
 						type="button"
-						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+						class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-gray-200"
 						aria-controls="navbar-sticky"
 						aria-expanded="false"
 					>
@@ -73,17 +55,17 @@
 					x-cloak
 					class="items-center justify-between w-full md:flex md:w-auto md:order-1"
 				>
-					<ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+					<ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0">
 						<li>
 							<a
 								href="/marsrutai"
-								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
 							>Maršrutai</a>
 						</li>
 						<li>
 							<a
 								href="/upes"
-								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+								class="block py-2 px-3 rounded-sm  md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
 							>Upės</a>
 						</li>
 					</ul>
